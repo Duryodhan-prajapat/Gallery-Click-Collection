@@ -1,0 +1,220 @@
+<style>
+    .country-selector__overlay {
+      background-color: transparent !important;
+      width: 0% !important;
+      height: 0% !important;
+    }
+ .Gallery-main-container{
+   display: flex;
+   flex-direction: column;
+   padding: 75px 0;
+  margin: 0 auto;
+  width: 1140px;
+ }
+.Gallery-heading{
+  width: 100%;
+  height: 10vh;
+}
+  .Gallery-heading h2{
+    /* font-size: {{section.settings}} */
+  }
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+  }
+  .item:hover{
+    flex: 7;
+  }
+.item-1{
+  background-image: url("{{ section.settings.Gallery-collection-Image-1 | image_url:width:'800px'  }}");
+}
+  .item-2{
+  background-image: url('{{ section.settings.Gallery-collection-Image-2 | image_url:width:'800px'  }}');
+}
+
+  .item-3{
+  background-image: url('{{ section.settings.Gallery-collection-Image-3 | image_url:width:'800px' }}');
+}
+
+  .item-4{
+  background-image: url('{{ section.settings.Gallery-collection-Image-4 | image_url:width:'800px' }}');
+}
+
+  .item-5{
+  background-image: url('{{ section.settings.Gallery-collection-Image-5 | image_url:width:'800px' }}');
+}
+  .Gallery-heading h2{
+    text-align: center;
+    font-size: 30px;
+  }
+  .item h2{
+    color: white;
+    font-size: 2.5rem;
+    text-align:center;
+    margin-top: 25%;
+  }
+  .item a{
+    text-decoration: none;
+    font-weight: 700;
+  }
+  @media(min-width: 749px) and (max-width: 1400px){
+    .item h2{
+      margin-top: 30%;
+    }
+    .Gallery-heading {
+      margin-bottom: 6rem;
+    }
+  }
+  @media(max-width: 749px){
+    .Gallery-main-container{
+      width: 380px !important;
+      padding: 40px 0;
+    }
+    .gallery-wrap{
+      flex-direction: column;
+      height: 90vh !important;
+    }
+  }
+</style>
+
+<div class="Gallery-main-container">
+  <div class="Gallery-heading">
+    <h2>{{ section.settings.Gallery-collection-heading }}</h2>
+  </div>
+  <div class="gallery-wrap" >
+    <div class="item item-1">
+      <a href="{{ section.settings.Gallery-Url-1 }}">
+      <h2> {{ section.settings.Gallery-collection-1 }} </h2>
+      </a> 
+    </div>
+    <div class="item item-2">
+      <a href="{{ section.settings.Gallery-Url-2 }}">
+      <h2> {{ section.settings.Gallery-collection-2 }} </h2>
+      </a>
+    </div>
+    <div class="item item-3">
+      <a href="{{ section.settings.Gallery-Url-3 }}">
+      <h2> {{ section.settings.Gallery-collection-3 }} </h2>
+      </a>
+    </div>
+    <div class="item item-4">
+      <a href="{{ section.settings.Gallery-Url-4 }}">
+      <h2> {{ section.settings.Gallery-collection-4 }} </h2>
+      </a> 
+    </div>
+    <div class="item item-5">
+     <a href="{{ section.settings.Gallery-Url-5 }}">
+      <h2> {{ section.settings.Gallery-collection-5 }} </h2>
+     </a> 
+    </div>
+  
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Gallery Click Collection",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "Gallery-collection-heading",
+        "label": "Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "Gallery-collection-Image-1",
+        "label": "Choose Your Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "Gallery-collection-1",
+        "label": "Your Collection Name"
+      },
+      {
+        "type": "url",
+        "id": "Gallery-Url-1",
+        "label": "Choose Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "Gallery-collection-Image-2",
+        "label": "Choose Your Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "Gallery-collection-2",
+        "label": "Your Collection Name"
+      },
+      {
+        "type": "url",
+        "id": "Gallery-Url-2",
+        "label": "Choose Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "Gallery-collection-Image-3",
+        "label": "Choose Your Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "Gallery-collection-3",
+        "label": "Your Collection Name"
+      },
+      {
+        "type": "url",
+        "id": "Gallery-Url-3",
+        "label": "Choose Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "Gallery-collection-Image-4",
+        "label": "Choose Your Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "Gallery-collection-4",
+        "label": "Your Collection Name"
+      },
+      {
+        "type": "url",
+        "id": "Gallery-Url-4",
+        "label": "Choose Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "Gallery-collection-Image-5",
+        "label": "Choose Your Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "Gallery-collection-5",
+        "label": "Your Collection Name"
+      },
+      {
+        "type": "url",
+        "id": "Gallery-Url-5",
+        "label": "Choose Collection"
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Gallery Click Collection"
+      }
+    ]
+  }
+{% endschema %}
